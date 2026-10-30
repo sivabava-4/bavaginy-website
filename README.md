@@ -4,25 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal website about my background, studies, interests and goals.">
-    <title>My Personal Website | Bavaginy</title>
+    <meta name="description" content="My personal portfolio website">
+    <title>Bavaginy | Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <style>
       
-/* GENERAL STYLES */
-
+/* MAIN COLOURS */
 :root {
-    --navy: #142d4e;
-    --blue: #2e75b6;
-    --sky: #dcecf8;
-    --ink: #203047;
-    --muted: #65748a;
-    --paper: #ffffff;
-    --soft: #f4f8fc;
-    --line: #dfe7f0;
-    --accent: #e8a85a;
+    --dark-green: #063B00;
+    --forest-green: #266210;
+    --lime-green: #90B800;
+    --yellow: #E1E100;
+
+    --white: #ffffff;
+    --light-bg: #f7faef;
+    --text: #193018;
+    --muted: #5d7058;
+    --border: #dbe8c5;
+
     --radius: 22px;
-    --shadow: 0 18px 50px rgba(22, 49, 79, 0.10);
+    --shadow: 0 15px 40px rgba(6, 59, 0, 0.12);
 }
 
 * {
@@ -36,10 +37,10 @@ html {
 
 body {
     margin: 0;
-    background: var(--paper);
-    color: var(--ink);
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.7;
+    background: var(--white);
+    color: var(--text);
 }
 
 a {
@@ -49,17 +50,16 @@ a {
 
 .container {
     width: min(1120px, calc(100% - 44px));
-    margin-inline: auto;
+    margin: 0 auto;
 }
 
-/* NAVIGATION */
 
 .site-header {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid var(--line);
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav {
@@ -71,325 +71,157 @@ a {
 }
 
 .brand {
-    color: var(--navy);
+    color: var(--dark-green);
+    font-size: 1.2rem;
     font-weight: 800;
-    font-size: 1.15rem;
-    letter-spacing: -0.04em;
 }
 
 .brand span {
-    color: var(--blue);
+    color: var(--forest-green);
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
-    color: #526176;
+    gap: 25px;
     font-size: 0.9rem;
     font-weight: 600;
 }
 
 .nav-links a:hover {
-    color: var(--blue);
+    color: var(--forest-green);
 }
 
-.nav-links .nav-cta {
-    padding: 10px 17px;
+.nav-cta {
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: var(--dark-green);
     color: white;
-    background: var(--navy);
-    border-radius: 999px;
 }
 
 .nav-links .nav-cta:hover {
-    background: var(--blue);
+    background: var(--forest-green);
     color: white;
 }
 
-/* HOMEPAGE */
-
+/* HOME SECTION */
 .hero {
-    min-height: 570px;
+    min-height: 500px;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr;
     align-items: center;
-    gap: 50px;
-    padding-top: 66px;
+    padding-top: 70px;
     padding-bottom: 70px;
 }
 
-.eyebrow {
-    margin: 0 0 15px;
-    color: var(--blue);
-    font-size: 0.73rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
+.hero-copy {
+    max-width: 750px;
 }
 
-.eyebrow-line {
-    display: inline-block;
-    width: 25px;
-    height: 2px;
-    margin: 0 9px 4px 0;
-    background: var(--accent);
+.eyebrow {
+    color: var(--forest-green);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    margin-bottom: 15px;
 }
 
 .hero h1 {
-    max-width: 650px;
     margin: 0;
-    color: var(--navy);
-    font-size: clamp(2.7rem, 5.4vw, 4.7rem);
-    line-height: 1.08;
-    letter-spacing: -0.065em;
+    color: var(--dark-green);
+    font-size: clamp(2.8rem, 5vw, 4.7rem);
+    line-height: 1.1;
 }
 
-.hero h1 span,
-.section-heading h2 span,
-.goals-layout h2 span,
-.contact-panel h2 span {
-    color: var(--blue);
+.hero h1 span {
+    color: var(--forest-green);
 }
 
 .hero-lead {
-    max-width: 530px;
-    margin: 24px 0 10px;
-    font-size: 1.23rem;
+    max-width: 550px;
+    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 1.55;
+    margin-top: 25px;
 }
 
 .hero-text {
-    max-width: 520px;
-    margin: 0;
+    max-width: 550px;
     color: var(--muted);
 }
 
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 13px;
+    gap: 15px;
     margin-top: 30px;
 }
 
+/* BUTTONS */
 .button {
-    min-height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 13px;
-    padding: 12px 20px;
-    border: 1px solid transparent;
-    border-radius: 999px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 700;
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .button-primary {
-    background: var(--blue);
+    background: var(--forest-green);
     color: white;
-    box-shadow: 0 8px 20px rgba(46, 117, 182, 0.2);
 }
 
 .button-primary:hover {
-    background: var(--navy);
+    background: var(--dark-green);
 }
 
 .button-secondary {
-    color: var(--navy);
-    border-color: var(--line);
-    background: white;
+    background: var(--yellow);
+    color: var(--dark-green);
 }
 
 .button-secondary:hover {
-    border-color: var(--blue);
-}
-
-/* DECORATIVE HERO DESIGN */
-
-.hero-art {
-    position: relative;
-    min-height: 385px;
-    display: grid;
-    place-items: center;
-    isolation: isolate;
-}
-
-.hero-art::before {
-    content: "";
-    position: absolute;
-    width: 290px;
-    height: 290px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #d9ebf9, #f2f7fc);
-    z-index: -2;
-}
-
-.art-card {
-    position: relative;
-    width: min(280px, 78%);
-    min-height: 330px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white;
-    border-radius: 24px;
-    background: linear-gradient(145deg, #1d4773, #102744);
-    box-shadow: 0 28px 60px rgba(20, 45, 78, 0.28);
-    transform: rotate(3deg);
-}
-
-.art-icon {
-    width: 46px;
-    height: 46px;
-    display: grid;
-    place-items: center;
-    border-radius: 15px;
-    color: var(--navy);
-    background: var(--accent);
-    font-size: 1.5rem;
-}
-
-.art-kicker {
-    margin: 18px 0 4px;
-    color: #a9c9e8;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    font-weight: 800;
-}
-
-.art-card h2 {
-    margin: 0;
-    font-size: 2.65rem;
-    line-height: 1.02;
-    letter-spacing: -0.05em;
-}
-
-.art-bottom {
-    display: flex;
-    justify-content: space-between;
-    color: #c8d9e9;
-    font-size: 0.72rem;
-}
-
-.art-bottom span:nth-child(2) {
-    color: var(--accent);
-}
-
-.art-orbit {
-    position: absolute;
-    border: 1px solid #a8cce8;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.orbit-one {
-    width: 340px;
-    height: 340px;
-    transform: rotate(-22deg) scaleY(0.52);
-}
-
-.orbit-two {
-    width: 380px;
-    height: 380px;
-    transform: rotate(30deg) scaleY(0.52);
-    border-color: #d1e3f2;
-}
-
-.floating-dot {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 7px rgba(232, 168, 90, 0.15);
-}
-
-.dot-one {
-    top: 40px;
-    right: 52px;
-}
-
-.dot-two {
-    bottom: 38px;
-    left: 55px;
-    width: 10px;
-    height: 10px;
-    background: var(--blue);
-}
-
-/* QUICK FACTS */
-
-.quick-facts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 27px 30px;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-}
-
-.fact {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.fact-number {
-    color: var(--blue);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-}
-
-.fact strong {
-    display: block;
-    color: var(--navy);
-    font-size: 0.93rem;
-}
-
-.fact p {
-    margin: 2px 0 0;
-    color: var(--muted);
-    font-size: 0.8rem;
+    background: var(--lime-green);
 }
 
 /* GENERAL SECTIONS */
-
 .section {
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
 .section-heading {
-    max-width: 680px;
-    margin-bottom: 36px;
+    max-width: 700px;
+    margin-bottom: 35px;
 }
 
 .section-heading h2,
 .goals-layout h2,
 .contact-panel h2 {
     margin: 0;
-    color: var(--navy);
+    color: var(--dark-green);
     font-size: clamp(2rem, 4vw, 3.1rem);
-    line-height: 1.13;
-    letter-spacing: -0.055em;
+    line-height: 1.2;
+}
+
+.section-heading h2 span,
+.contact-panel h2 span {
+    color: var(--forest-green);
 }
 
 .section-intro {
-    max-width: 560px;
-    margin: 15px 0 0;
     color: var(--muted);
+    max-width: 600px;
 }
 
-/* ABOUT ME */
-
+/* ABOUT SECTION */
 .about-grid {
     display: grid;
     grid-template-columns: 0.65fr 1.35fr;
@@ -404,8 +236,12 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: var(--radius);
+    background: linear-gradient(
+        145deg,
+        var(--forest-green),
+        var(--dark-green)
+    );
     color: white;
-    background: linear-gradient(145deg, #2e75b6, #142d4e);
     box-shadow: var(--shadow);
 }
 
@@ -413,38 +249,34 @@ a {
     font-size: 8rem;
     font-weight: 800;
     line-height: 1;
-    letter-spacing: -0.1em;
 }
 
 .about-mark small {
-    margin-top: 16px;
-    color: #c5def2;
-    font-size: 0.68rem;
+    margin-top: 15px;
+    color: var(--yellow);
+    font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.2em;
 }
 
 .about-copy p {
-    margin-top: 0;
-    color: #536277;
+    color: var(--muted);
 }
 
 /* EDUCATION */
-
 .section-soft {
-    background: var(--soft);
+    background: var(--light-bg);
 }
 
 .study-card {
-    position: relative;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 25px;
+    padding: 35px;
     align-items: start;
-    padding: 34px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
     background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
 
@@ -453,48 +285,36 @@ a {
     height: 58px;
     display: grid;
     place-items: center;
-    border-radius: 17px;
-    background: var(--sky);
-    color: var(--blue);
+    border-radius: 15px;
+    background: var(--lime-green);
+    color: var(--dark-green);
     font-size: 1.7rem;
 }
 
 .card-label {
-    margin: 0 0 5px;
-    color: var(--blue);
-    font-size: 0.7rem;
+    margin: 0;
+    color: var(--forest-green);
+    font-size: 0.75rem;
     font-weight: 800;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
 }
 
 .study-content h3 {
-    margin: 0 0 10px;
-    color: var(--navy);
+    color: var(--dark-green);
     font-size: 1.4rem;
 }
 
-.study-content > p:not(.card-label) {
-    max-width: 720px;
+.study-content p {
     color: var(--muted);
 }
 
 .study-number {
-    color: #dce7f0;
-    font-size: 2.7rem;
+    color: var(--lime-green);
+    font-size: 2.5rem;
     font-weight: 800;
 }
 
-.edit-note {
-    padding: 12px 15px;
-    border-left: 3px solid var(--accent);
-    border-radius: 0 8px 8px 0;
-    background: #fff8ee;
-    color: #74552e;
-    font-size: 0.87rem;
-}
-
 /* INTERESTS */
-
 .interest-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -502,11 +322,11 @@ a {
 }
 
 .interest-card {
-    padding: 27px;
-    border: 1px solid var(--line);
-    border-radius: 18px;
+    padding: 28px;
     background: white;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: 0.2s ease;
 }
 
 .interest-card:hover {
@@ -515,32 +335,30 @@ a {
 }
 
 .interest-symbol {
-    width: 47px;
-    height: 47px;
+    width: 48px;
+    height: 48px;
     display: grid;
     place-items: center;
+    background: var(--yellow);
+    color: var(--dark-green);
     border-radius: 14px;
-    background: var(--sky);
-    color: var(--blue);
     font-size: 1.5rem;
 }
 
 .interest-card h3 {
-    margin: 19px 0 7px;
-    color: var(--navy);
+    color: var(--dark-green);
+    margin-top: 20px;
 }
 
 .interest-card p {
-    margin: 0;
     color: var(--muted);
-    font-size: 0.93rem;
+    font-size: 0.95rem;
 }
 
 /* GOALS */
-
 .goals-section {
+    background: var(--dark-green);
     color: white;
-    background: var(--navy);
 }
 
 .goals-layout {
@@ -551,7 +369,7 @@ a {
 }
 
 .goals-layout .eyebrow {
-    color: #9dc8ed;
+    color: var(--lime-green);
 }
 
 .goals-layout h2 {
@@ -559,47 +377,41 @@ a {
 }
 
 .goals-layout h2 span {
-    color: #8ec4f0;
+    color: var(--yellow);
 }
 
 .goals-intro {
-    max-width: 440px;
-    margin: 22px 0 0;
-    color: #c1d0e0;
+    color: #d6e8c9;
+    margin-top: 20px;
 }
 
 .goals-list {
-    border-top: 1px solid rgba(255, 255, 255, 0.17);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .goal {
     display: flex;
     gap: 22px;
     padding: 22px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .goal > span {
-    padding-top: 2px;
-    color: #8ec4f0;
-    font-size: 0.8rem;
+    color: var(--yellow);
     font-weight: 800;
 }
 
 .goal h3 {
     margin: 0;
     color: white;
-    font-size: 1.05rem;
 }
 
 .goal p {
-    margin: 4px 0 0;
-    color: #c1d0e0;
-    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #d6e8c9;
 }
 
 /* CONTACT */
-
 .contact-section {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -611,17 +423,16 @@ a {
     justify-content: space-between;
     gap: 35px;
     padding: 42px;
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--light-bg);
 }
 
 .contact-panel > div {
     max-width: 650px;
 }
 
-.contact-panel p:not(.eyebrow) {
-    margin-bottom: 0;
+.contact-panel p {
     color: var(--muted);
 }
 
@@ -630,9 +441,8 @@ a {
 }
 
 /* FOOTER */
-
 .footer {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--border);
 }
 
 .footer-inner {
@@ -646,15 +456,14 @@ a {
 .footer p,
 .back-top {
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
 }
 
-.back-top {
-    font-weight: 700;
+.back-top:hover {
+    color: var(--forest-green);
 }
 
 /* TABLET */
-
 @media (max-width: 800px) {
     .nav {
         min-height: 72px;
@@ -664,23 +473,8 @@ a {
         gap: 15px;
     }
 
-    .nav-links a {
-        font-size: 0.82rem;
-    }
-
     .hero {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding-top: 55px;
-    }
-
-    .hero-art {
-        min-height: 360px;
-    }
-
-    .quick-facts {
-        gap: 15px;
-        padding: 22px;
+        min-height: 400px;
     }
 
     .about-grid {
@@ -688,66 +482,43 @@ a {
     }
 
     .goals-layout {
-        gap: 42px;
+        gap: 40px;
     }
 }
 
 /* MOBILE */
-
 @media (max-width: 600px) {
     .container {
         width: calc(100% - 30px);
     }
 
     .nav {
-        align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
-        padding-top: 15px;
-        padding-bottom: 14px;
+        align-items: flex-start;
+        padding: 15px 0;
+        gap: 12px;
     }
 
     .nav-links {
         width: 100%;
         overflow-x: auto;
         gap: 18px;
-        padding-bottom: 2px;
-    }
-
-    .nav-links .nav-cta {
-        padding: 6px 12px;
+        padding-bottom: 5px;
     }
 
     .hero {
         min-height: auto;
-        padding-top: 48px;
-        padding-bottom: 50px;
+        padding-top: 55px;
+        padding-bottom: 55px;
     }
 
     .hero h1 {
-        font-size: clamp(2.7rem, 13vw, 4rem);
-    }
-
-    .hero-art {
-        min-height: 330px;
-    }
-
-    .art-card {
-        min-height: 290px;
-    }
-
-    .art-card h2 {
-        font-size: 2.35rem;
-    }
-
-    .quick-facts {
-        grid-template-columns: 1fr;
-        gap: 17px;
+        font-size: clamp(2.6rem, 12vw, 4rem);
     }
 
     .section {
-        padding-top: 72px;
-        padding-bottom: 72px;
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
 
     .about-grid,
@@ -777,52 +548,46 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .goals-layout {
-        gap: 30px;
-    }
-
     .contact-panel {
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
         padding: 28px;
     }
 
     .footer-inner {
         flex-wrap: wrap;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px 0;
     }
 
     .footer p {
-        order: 3;
         width: 100%;
         margin: 0;
     }
 }
 
-/* ACCESSIBILITY
-
+/* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    *,
-    *::before,
-    *::after {
+    * {
         transition-duration: 0.01ms !important;
     }
-} */
+}
 
     </style>
 </head>
+
 <body>
 
+    <!-- Navigation -->
     <header class="site-header">
-        <nav class="nav container" aria-label="Main navigation">
-            <a class="brand" href="#home">My<span>Portfolio</span></a>
+        <nav class="nav container">
+            <a href="#home" class="brand">My<span>Portfolio</span></a>
 
             <div class="nav-links">
+                <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#education">Studies</a>
                 <a href="#interests">Interests</a>
@@ -833,13 +598,11 @@ a {
     </header>
 
     <main>
-        <!-- Homepage -->
+
+        <!-- Home -->
         <section class="hero container" id="home">
             <div class="hero-copy">
-                <p class="eyebrow">
-                    <span class="eyebrow-line"></span>
-                    WELCOME TO MY WEBSITE
-                </p>
+                <p class="eyebrow">WELCOME TO MY WEBSITE</p>
 
                 <h1>Hello, I'm <span>Bavaginy</span>.</h1>
 
@@ -849,74 +612,27 @@ a {
                 </p>
 
                 <p class="hero-text">
-                    This website introduces my background, studies,
-                    interests and future goals.
+                    Welcome to my personal website. Here you can learn
+                    about my background, education, interests and
+                    future goals.
                 </p>
 
                 <div class="hero-actions">
-                    <a class="button button-primary" href="#about">
-                        Get to know me <span>↗</span>
+                    <a href="#about" class="button button-primary">
+                        Get to know me
                     </a>
 
-                    <a class="button button-secondary" href="#goals">
-                        My goals
+                    <a href="#goals" class="button button-secondary">
+                        My Goals
                     </a>
-                </div>
-            </div>
-
-            <div class="hero-art" aria-label="Decorative design">
-                <div class="art-orbit orbit-one"></div>
-                <div class="art-orbit orbit-two"></div>
-
-                <div class="art-card">
-                    <div class="art-icon">✦</div>
-                    <p class="art-kicker">MY JOURNEY</p>
-
-                    <h2>Learn.<br>Create.<br>Grow.</h2>
-
-                    <div class="art-bottom">
-                        <span>Curiosity</span>
-                        <span>●</span>
-                        <span>Progress</span>
-                    </div>
-                </div>
-
-                <span class="floating-dot dot-one"></span>
-                <span class="floating-dot dot-two"></span>
-            </div>
-        </section>
-
-        <!-- Quick introduction -->
-        <section class="quick-facts container">
-            <div class="fact">
-                <span class="fact-number">01</span>
-                <div>
-                    <strong>My background</strong>
-                    <p>The experiences that shape me</p>
-                </div>
-            </div>
-
-            <div class="fact">
-                <span class="fact-number">02</span>
-                <div>
-                    <strong>My studies</strong>
-                    <p>Skills I am developing</p>
-                </div>
-            </div>
-
-            <div class="fact">
-                <span class="fact-number">03</span>
-                <div>
-                    <strong>My future</strong>
-                    <p>Goals I am working towards</p>
                 </div>
             </div>
         </section>
 
-        <!-- About me -->
+        <!-- About -->
         <section class="section container" id="about">
             <div class="section-heading">
-                <p class="eyebrow">A LITTLE ABOUT ME</p>
+                <p class="eyebrow">ABOUT ME</p>
                 <h2>Every journey starts <span>somewhere.</span></h2>
             </div>
 
@@ -928,15 +644,16 @@ a {
 
                 <div class="about-copy">
                     <p>
-                        My name is Bavaginy. I am a student who believes
-                        that learning new things can create new opportunities.
-                        I enjoy developing my knowledge and improving my skills.
+                        My name is Bavaginy. I am a student who enjoys
+                        learning new things and improving my knowledge.
+                        I believe education is important for creating
+                        better opportunities in the future.
                     </p>
 
                     <p>
-                        My background and experiences are an important part
-                        of who I am. I try to learn from each experience,
-                        stay positive and keep moving towards my aims.
+                        I am interested in developing my academic,
+                        creative and digital skills. I always try
+                        to learn from new experiences and improve myself.
                     </p>
                 </div>
             </div>
@@ -945,13 +662,14 @@ a {
         <!-- Education -->
         <section class="section section-soft" id="education">
             <div class="container">
+
                 <div class="section-heading">
-                    <p class="eyebrow">WHAT I AM LEARNING</p>
-                    <h2>My studies <span>& development.</span></h2>
+                    <p class="eyebrow">MY EDUCATION</p>
+                    <h2>My studies <span>&amp; development.</span></h2>
 
                     <p class="section-intro">
-                        Education helps me build knowledge and prepare
-                        for future opportunities.
+                        Education helps me develop useful knowledge,
+                        confidence and skills for my future.
                     </p>
                 </div>
 
@@ -959,140 +677,174 @@ a {
                     <div class="study-icon">✎</div>
 
                     <div class="study-content">
-                        <p class="card-label">CURRENT FOCUS</p>
-                        <h3>My course and learning journey</h3>
+                        <p class="card-label">CURRENT STUDIES</p>
+
+                        <h3>My Learning Journey</h3>
 
                         <p>
-                            I am developing my academic and digital skills.
-                            I am learning how to organise information,
-                            communicate clearly and present my work.
-                        </p>
-
-                        <p class="edit-note">
-                            Add your real course name, college or university,
-                            and the subjects you are studying.
+                            I am currently improving my academic and
+                            digital skills. I am learning how to
+                            communicate clearly, use technology and
+                            complete my assignments successfully.
                         </p>
                     </div>
 
                     <span class="study-number">01</span>
                 </div>
+
             </div>
         </section>
 
         <!-- Interests -->
         <section class="section container" id="interests">
+
             <div class="section-heading">
-                <p class="eyebrow">OUTSIDE THE CLASSROOM</p>
+                <p class="eyebrow">MY INTERESTS</p>
                 <h2>Things I <span>enjoy.</span></h2>
 
                 <p class="section-intro">
-                    My interests help me relax, stay curious
-                    and discover new ideas.
+                    My interests help me discover new ideas,
+                    improve my creativity and develop my confidence.
                 </p>
             </div>
 
             <div class="interest-grid">
+
                 <article class="interest-card">
-                    <span class="interest-symbol">⌘</span>
+                    <div class="interest-symbol">⌘</div>
+
                     <h3>Technology</h3>
+
                     <p>
-                        Exploring digital tools and learning how websites
-                        are designed and built.
+                        I enjoy exploring digital tools and
+                        learning how websites are created.
                     </p>
                 </article>
 
                 <article class="interest-card">
-                    <span class="interest-symbol">◎</span>
+                    <div class="interest-symbol">★</div>
+
                     <h3>Creativity</h3>
+
                     <p>
-                        Trying new ideas and finding attractive ways
-                        to present information.
+                        I enjoy learning creative skills and
+                        presenting my ideas in different ways.
                     </p>
                 </article>
 
                 <article class="interest-card">
-                    <span class="interest-symbol">↗</span>
-                    <h3>Personal growth</h3>
+                    <div class="interest-symbol">↗</div>
+
+                    <h3>Personal Growth</h3>
+
                     <p>
-                        Improving my confidence, learning from feedback
-                        and building useful skills.
+                        I want to improve my communication,
+                        confidence and problem-solving skills.
                     </p>
                 </article>
+
             </div>
         </section>
 
         <!-- Goals -->
         <section class="section goals-section" id="goals">
             <div class="container goals-layout">
+
                 <div>
-                    <p class="eyebrow">LOOKING AHEAD</p>
-                    <h2>Small steps.<br><span>Big ambitions.</span></h2>
+                    <p class="eyebrow">MY FUTURE</p>
+
+                    <h2>Small steps.<br>
+                        <span>Big ambitions.</span>
+                    </h2>
 
                     <p class="goals-intro">
-                        Reaching a goal takes time, effort and patience.
-                        I want to keep learning and become proud of
-                        the progress I make.
+                        My goal is to continue learning, complete
+                        my education successfully and build a
+                        positive future.
                     </p>
                 </div>
 
                 <div class="goals-list">
+
                     <div class="goal">
                         <span>01</span>
+
                         <div>
-                            <h3>Improve my skills</h3>
-                            <p>Practise regularly and learn from mistakes.</p>
+                            <h3>Improve My Skills</h3>
+                            <p>
+                                Continue learning and developing
+                                my knowledge.
+                            </p>
                         </div>
                     </div>
 
                     <div class="goal">
                         <span>02</span>
+
                         <div>
-                            <h3>Complete my studies</h3>
-                            <p>Work consistently towards my qualification.</p>
+                            <h3>Complete My Studies</h3>
+                            <p>
+                                Work hard and achieve my academic goals.
+                            </p>
                         </div>
                     </div>
 
                     <div class="goal">
                         <span>03</span>
+
                         <div>
-                            <h3>Build my future</h3>
-                            <p>Use what I learn to create new opportunities.</p>
+                            <h3>Build My Career</h3>
+                            <p>
+                                Use my education and skills to
+                                create future opportunities.
+                            </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
         <section class="section container contact-section" id="contact">
+
             <div class="contact-panel">
+
                 <div>
-                    <p class="eyebrow">LET'S CONNECT</p>
+                    <p class="eyebrow">CONTACT ME</p>
+
                     <h2>Thank you for <span>visiting.</span></h2>
 
                     <p>
-                        This website is a short introduction to me
-                        and my journey.
+                        Thank you for taking the time to
+                        visit my personal website.
                     </p>
                 </div>
 
-                <a class="button button-primary"
-                   href="mailto:your.email@example.com">
-                    Email me <span>↗</span>
+                <a href="mailto:your.email@example.com"
+                   class="button button-primary">
+                    Email Me
                 </a>
+
             </div>
         </section>
+
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-inner">
-            <a class="brand" href="#home">
+
+            <a href="#home" class="brand">
                 My<span>Portfolio</span>
             </a>
 
-            <p>Designed and built with HTML and CSS.</p>
+            <p>Designed with HTML and CSS.</p>
 
-            <a href="#home" class="back-top">Back to top ↑</a>
+            <a href="#home" class="back-top">
+                Back to Top ↑
+            </a>
+
         </div>
     </footer>
 
