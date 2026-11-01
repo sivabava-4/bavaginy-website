@@ -1,851 +1,285 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My personal portfolio website">
-    <title>Bavaginy | Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <title>Bavaginy 25044370- Personal Website</title>
+
     <style>
       
-/* MAIN COLOURS */
-:root {
-    --dark-green: #063B00;
-    --forest-green: #266210;
-    --lime-green: #90B800;
-    --yellow: #E1E100;
-
-    --white: #ffffff;
-    --light-bg: #f7faef;
-    --text: #193018;
-    --muted: #5d7058;
-    --border: #dbe8c5;
-
-    --radius: 22px;
-    --shadow: 0 15px 40px rgba(6, 59, 0, 0.12);
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
-
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    line-height: 1.7;
-    background: var(--white);
-    color: var(--text);
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.container {
-    width: min(1120px, calc(100% - 44px));
-    margin: 0 auto;
-}
-
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-}
-
-.nav {
-    min-height: 78px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-}
-
-.brand {
-    color: var(--dark-green);
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-
-.brand span {
-    color: var(--forest-green);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.nav-links a:hover {
-    color: var(--forest-green);
-}
-
-.nav-cta {
-    padding: 10px 18px;
-    border-radius: 30px;
-    background: var(--dark-green);
-    color: white;
-}
-
-.nav-links .nav-cta:hover {
-    background: var(--forest-green);
-    color: white;
-}
-
-/* HOME SECTION */
-.hero {
-    min-height: 500px;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-
-.hero-copy {
-    max-width: 750px;
-}
-
-.eyebrow {
-    color: var(--forest-green);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    margin: 0;
-    color: var(--dark-green);
-    font-size: clamp(2.8rem, 5vw, 4.7rem);
-    line-height: 1.1;
-}
-
-.hero h1 span {
-    color: var(--forest-green);
-}
-
-.hero-lead {
-    max-width: 550px;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 25px;
-}
-
-.hero-text {
-    max-width: 550px;
-    color: var(--muted);
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-/* BUTTONS */
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 12px 22px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    transition: 0.2s ease;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-}
-
-.button-primary {
-    background: var(--forest-green);
-    color: white;
-}
-
-.button-primary:hover {
-    background: var(--dark-green);
-}
-
-.button-secondary {
-    background: var(--yellow);
-    color: var(--dark-green);
-}
-
-.button-secondary:hover {
-    background: var(--lime-green);
-}
-
-/* GENERAL SECTIONS */
-.section {
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-.section-heading {
-    max-width: 700px;
-    margin-bottom: 35px;
-}
-
-.section-heading h2,
-.goals-layout h2,
-.contact-panel h2 {
-    margin: 0;
-    color: var(--dark-green);
-    font-size: clamp(2rem, 4vw, 3.1rem);
-    line-height: 1.2;
-}
-
-.section-heading h2 span,
-.contact-panel h2 span {
-    color: var(--forest-green);
-}
-
-.section-intro {
-    color: var(--muted);
-    max-width: 600px;
-}
-
-/* ABOUT SECTION */
-.about-grid {
-    display: grid;
-    grid-template-columns: 0.65fr 1.35fr;
-    gap: 55px;
-    align-items: center;
-}
-
-.about-mark {
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--radius);
-    background: linear-gradient(
-        145deg,
-        var(--forest-green),
-        var(--dark-green)
-    );
-    color: white;
-    box-shadow: var(--shadow);
-}
-
-.about-mark span {
-    font-size: 8rem;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.about-mark small {
-    margin-top: 15px;
-    color: var(--yellow);
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-}
-
-.about-copy p {
-    color: var(--muted);
-}
-
-/* EDUCATION */
-.section-soft {
-    background: var(--light-bg);
-}
-
-.study-card {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 25px;
-    padding: 35px;
-    align-items: start;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.study-icon {
-    width: 58px;
-    height: 58px;
-    display: grid;
-    place-items: center;
-    border-radius: 15px;
-    background: var(--lime-green);
-    color: var(--dark-green);
-    font-size: 1.7rem;
-}
-
-.card-label {
-    margin: 0;
-    color: var(--forest-green);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-}
-
-.study-content h3 {
-    color: var(--dark-green);
-    font-size: 1.4rem;
-}
-
-.study-content p {
-    color: var(--muted);
-}
-
-.study-number {
-    color: var(--lime-green);
-    font-size: 2.5rem;
-    font-weight: 800;
-}
-
-/* INTERESTS */
-.interest-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.interest-card {
-    padding: 28px;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    transition: 0.2s ease;
-}
-
-.interest-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.interest-symbol {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    background: var(--yellow);
-    color: var(--dark-green);
-    border-radius: 14px;
-    font-size: 1.5rem;
-}
-
-.interest-card h3 {
-    color: var(--dark-green);
-    margin-top: 20px;
-}
-
-.interest-card p {
-    color: var(--muted);
-    font-size: 0.95rem;
-}
-
-/* GOALS */
-.goals-section {
-    background: var(--dark-green);
-    color: white;
-}
-
-.goals-layout {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.goals-layout .eyebrow {
-    color: var(--lime-green);
-}
-
-.goals-layout h2 {
-    color: white;
-}
-
-.goals-layout h2 span {
-    color: var(--yellow);
-}
-
-.goals-intro {
-    color: #d6e8c9;
-    margin-top: 20px;
-}
-
-.goals-list {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.goal {
-    display: flex;
-    gap: 22px;
-    padding: 22px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.goal > span {
-    color: var(--yellow);
-    font-weight: 800;
-}
-
-.goal h3 {
-    margin: 0;
-    color: white;
-}
-
-.goal p {
-    margin-top: 5px;
-    color: #d6e8c9;
-}
-
-/* CONTACT */
-.contact-section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-.contact-panel {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 35px;
-    padding: 42px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--light-bg);
-}
-
-.contact-panel > div {
-    max-width: 650px;
-}
-
-.contact-panel p {
-    color: var(--muted);
-}
-
-.contact-panel .button {
-    flex-shrink: 0;
-}
-
-/* FOOTER */
-.footer {
-    border-top: 1px solid var(--border);
-}
-
-.footer-inner {
-    min-height: 82px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.footer p,
-.back-top {
-    color: var(--muted);
-    font-size: 0.85rem;
-}
-
-.back-top:hover {
-    color: var(--forest-green);
-}
-
-/* TABLET */
-@media (max-width: 800px) {
-    .nav {
-        min-height: 72px;
-    }
-
-    .nav-links {
-        gap: 15px;
-    }
-
-    .hero {
-        min-height: 400px;
-    }
-
-    .about-grid {
-        gap: 30px;
-    }
-
-    .goals-layout {
-        gap: 40px;
-    }
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .container {
-        width: calc(100% - 30px);
-    }
-
-    .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 0;
-        gap: 12px;
-    }
-
-    .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        gap: 18px;
-        padding-bottom: 5px;
-    }
-
-    .hero {
-        min-height: auto;
-        padding-top: 55px;
-        padding-bottom: 55px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.6rem, 12vw, 4rem);
-    }
-
-    .section {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    .about-grid,
-    .goals-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .about-mark {
-        min-height: 200px;
-    }
-
-    .about-mark span {
-        font-size: 6rem;
-    }
-
-    .study-card {
-        grid-template-columns: auto 1fr;
-        gap: 17px;
-        padding: 22px;
-    }
-
-    .study-number {
-        display: none;
-    }
-
-    .interest-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-panel {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 28px;
-    }
-
-    .footer-inner {
-        flex-wrap: wrap;
-        padding: 20px 0;
-    }
-
-    .footer p {
-        width: 100%;
-        margin: 0;
-    }
-}
-
-/* ACCESSIBILITY */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    * {
-        transition-duration: 0.01ms !important;
-    }
-}
-
+        :root {
+            --dark: #3D0301;
+            --pink: #B03052;
+            --light-pink: #D76C82;
+            --cream: #EBE8DB;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h2 {
+            color: var(--light-pink);
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--light-pink);
+        }
+
+    
+        .home {
+            background: var(--cream);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .home img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--pink);
+        }
+
+        .home h1 {
+            margin-top: 15px;
+            color: var(--dark);
+        }
+
+        section {
+            padding: 40px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            color: var(--pink);
+            margin-bottom: 25px;
+        }
+
+        .light {
+            background: var(--cream);
+        }
+
+      
+        .content {
+            max-width: 850px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .content img {
+            width: 230px;
+            height: 180px;
+            object-fit: cover;
+            border: 3px solid var(--light-pink);
+            border-radius: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--cream);
+            padding: 15px;
+            border: 1px solid var(--light-pink);
+            border-radius: 8px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            color: var(--pink);
+            margin: 10px;
+        }
+
+      
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+   
+        #contact {
+            background: var(--light-pink);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+      
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            .content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .content img {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header class="site-header">
-        <nav class="nav container">
-            <a href="#home" class="brand">My<span>Portfolio</span></a>
-
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#education">Studies</a>
-                <a href="#interests">Interests</a>
-                <a href="#goals">Goals</a>
-                <a href="#contact" class="nav-cta">Contact</a>
-            </div>
+    <header>
+        <h1>Bavaginy Sivasubramaniyam</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#interests">Interests</a>
+            <a href="#goals">Goals</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main>
+    <section id="home" class="home">
+        <img src="Anime Mirror Selfie in a Shoe Store.png" alt="My photograph">
+        <h1>Hello, I'm Bavaginy</h1>
+        <p>Welcome to my personal website.</p>
+        <p>A student who enjoys learning and developing new skills.</p>
+    </section>
 
-        <!-- Home -->
-        <section class="hero container" id="home">
-            <div class="hero-copy">
-                <p class="eyebrow">WELCOME TO MY WEBSITE</p>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="content">
+            <img src="Anime Portrait in Golden Traditional Attire.png" alt="About me">
+            <p>
+                My name is Bavaginy. I am a student who enjoys
+                learning new things and improving my knowledge.
+                I like discovering new ideas and working towards
+                my future goals.
+            </p>
+        </div>
+    </section>
 
-                <h1>Hello, I'm <span>Bavaginy</span>.</h1>
+    <section id="education" class="light">
+        <h2>My Education</h2>
+        <div class="content">
+            <img src="Friends Around the Student Desk.png" alt="Studying">
+            <p>
+                Education is an important part of my life.
+                I am developing my academic and digital skills.
+                I want to complete my studies and prepare
+                for my future career.
+            </p>
+        </div>
+    </section>
 
-                <p class="hero-lead">
-                    A student who is learning, growing and working
-                    towards a brighter future.
-                </p>
+    <section id="interests">
+        <h2>My Interests</h2>
+        <div class="cards">
 
-                <p class="hero-text">
-                    Welcome to my personal website. Here you can learn
-                    about my background, education, interests and
-                    future goals.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#about" class="button button-primary">
-                        Get to know me
-                    </a>
-
-                    <a href="#goals" class="button button-secondary">
-                        My Goals
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="section container" id="about">
-            <div class="section-heading">
-                <p class="eyebrow">ABOUT ME</p>
-                <h2>Every journey starts <span>somewhere.</span></h2>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-mark">
-                    <span>B</span>
-                    <small>MY STORY</small>
-                </div>
-
-                <div class="about-copy">
-                    <p>
-                        My name is Bavaginy. I am a student who enjoys
-                        learning new things and improving my knowledge.
-                        I believe education is important for creating
-                        better opportunities in the future.
-                    </p>
-
-                    <p>
-                        I am interested in developing my academic,
-                        creative and digital skills. I always try
-                        to learn from new experiences and improve myself.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="section section-soft" id="education">
-            <div class="container">
-
-                <div class="section-heading">
-                    <p class="eyebrow">MY EDUCATION</p>
-                    <h2>My studies <span>&amp; development.</span></h2>
-
-                    <p class="section-intro">
-                        Education helps me develop useful knowledge,
-                        confidence and skills for my future.
-                    </p>
-                </div>
-
-                <div class="study-card">
-                    <div class="study-icon">✎</div>
-
-                    <div class="study-content">
-                        <p class="card-label">CURRENT STUDIES</p>
-
-                        <h3>My Learning Journey</h3>
-
-                        <p>
-                            I am currently improving my academic and
-                            digital skills. I am learning how to
-                            communicate clearly, use technology and
-                            complete my assignments successfully.
-                        </p>
-                    </div>
-
-                    <span class="study-number">01</span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Interests -->
-        <section class="section container" id="interests">
-
-            <div class="section-heading">
-                <p class="eyebrow">MY INTERESTS</p>
-                <h2>Things I <span>enjoy.</span></h2>
-
-                <p class="section-intro">
-                    My interests help me discover new ideas,
-                    improve my creativity and develop my confidence.
-                </p>
+            <div class="card">
+                <img src="Anime Lunch Gathering at the Covered Café.png" alt="Technology">
+                <h3>Technology</h3>
+                <p>I enjoy learning about computers and technology.</p>
             </div>
 
-            <div class="interest-grid">
-
-                <article class="interest-card">
-                    <div class="interest-symbol">⌘</div>
-
-                    <h3>Technology</h3>
-
-                    <p>
-                        I enjoy exploring digital tools and
-                        learning how websites are created.
-                    </p>
-                </article>
-
-                <article class="interest-card">
-                    <div class="interest-symbol">★</div>
-
-                    <h3>Creativity</h3>
-
-                    <p>
-                        I enjoy learning creative skills and
-                        presenting my ideas in different ways.
-                    </p>
-                </article>
-
-                <article class="interest-card">
-                    <div class="interest-symbol">↗</div>
-
-                    <h3>Personal Growth</h3>
-
-                    <p>
-                        I want to improve my communication,
-                        confidence and problem-solving skills.
-                    </p>
-                </article>
-
+            <div class="card">
+                <img src="South Asian Woman at Laptops.png" alt="Creativity">
+                <h3>Creativity</h3>
+                <p>I enjoy creative activities and new ideas.</p>
             </div>
-        </section>
 
-        <!-- Goals -->
-        <section class="section goals-section" id="goals">
-            <div class="container goals-layout">
-
-                <div>
-                    <p class="eyebrow">MY FUTURE</p>
-
-                    <h2>Small steps.<br>
-                        <span>Big ambitions.</span>
-                    </h2>
-
-                    <p class="goals-intro">
-                        My goal is to continue learning, complete
-                        my education successfully and build a
-                        positive future.
-                    </p>
-                </div>
-
-                <div class="goals-list">
-
-                    <div class="goal">
-                        <span>01</span>
-
-                        <div>
-                            <h3>Improve My Skills</h3>
-                            <p>
-                                Continue learning and developing
-                                my knowledge.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="goal">
-                        <span>02</span>
-
-                        <div>
-                            <h3>Complete My Studies</h3>
-                            <p>
-                                Work hard and achieve my academic goals.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="goal">
-                        <span>03</span>
-
-                        <div>
-                            <h3>Build My Career</h3>
-                            <p>
-                                Use my education and skills to
-                                create future opportunities.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="card">
+                <img src="Anime Toy Store Visit with Geoffrey.png" alt="Hobbies">
+                <h3>My Hobbies</h3>
+                <p>I enjoy spending time doing activities I love.</p>
             </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="section container contact-section" id="contact">
-
-            <div class="contact-panel">
-
-                <div>
-                    <p class="eyebrow">CONTACT ME</p>
-
-                    <h2>Thank you for <span>visiting.</span></h2>
-
-                    <p>
-                        Thank you for taking the time to
-                        visit my personal website.
-                    </p>
-                </div>
-
-                <a href="mailto:your.email@example.com"
-                   class="button button-primary">
-                    Email Me
-                </a>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-
-            <a href="#home" class="brand">
-                My<span>Portfolio</span>
-            </a>
-
-            <p>Designed with HTML and CSS.</p>
-
-            <a href="#home" class="back-top">
-                Back to Top ↑
-            </a>
 
         </div>
+    </section>
+
+    <section id="goals" class="light">
+        <h2>My Future Goals</h2>
+        <div class="content">
+            <img src="Gentle Smile Beside the Laptop.png" alt="My future goals">
+            <div>
+                <p>My future goals are:</p>
+                <ul>
+                    <li>Complete my education.</li>
+                    <li>Improve my knowledge and skills.</li>
+                    <li>Build a successful career.</li>
+                    <li>Become an independent person.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Thank you for visiting my personal website.</p>
+        <a href="" class="button">
+            Email
+        </a>
+    </section>
+
+    <footer>
+        <p>...Thank you....</p>
     </footer>
 
 </body>
