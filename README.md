@@ -234,7 +234,7 @@
         <div class="cards">
 
             <div class="card">
-                <img src="Anime Lunch Gathering at the Covered Café.png" alt="Technology">
+                <img src="" alt="Technology">
                 <h3>Technology</h3>
                 <p>I enjoy learning about computers and technology.</p>
             </div>
