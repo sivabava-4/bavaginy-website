@@ -234,7 +234,7 @@
         <div class="cards">
 
             <div class="card">
-                <img src="" alt="Technology">
+                <img src="c:\Users\ACER\OneDrive - University of Bradford\Desktop\Personal Website\Anime-Style Modern Tech Workspace.png" alt="Technology">
                 <h3>Technology</h3>
                 <p>I enjoy learning about computers and technology.</p>
             </div>
